@@ -7,7 +7,7 @@ export default class UserModel {
             this.type = type
             
     }
-
+ 
     static SignUp(name, email, password, type) {
         const newUser = new UserModel(
            

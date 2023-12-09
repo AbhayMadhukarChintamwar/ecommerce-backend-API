@@ -9,7 +9,7 @@ app.use("/api/user", userRoutes)
 
 app.use('/', (req, res) => {
   res.send("Welcome to the ecommerce api");
-})
+}) 
 
 app.listen(2000, () => {
   console.log("Server fetching on a port 2000")
