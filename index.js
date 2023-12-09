@@ -1,14 +1,14 @@
 import express from 'express';
-import ProductRouter from './src/features/product/product.routes.js'
+import productRoutes from './src/features/product/product.routes.js';
+const app= express();
 
-const app = express();
+// app.use("api/product", productRoutes)
+app.use("/api/product", productRoutes);
 
-app.use("/api/products", ProductRouter)
-
-app.get("/", (req, res) => {
-    res.send('welcome to Ecommerce project');
+app.use('/', (req,res)=>{
+  res.send("Welcome to the ecommerce api");
 })
 
-app.listen(2000, () => {
-    console.log('server are listening on a port 2000')
-}) 
+app.listen(2000, ()=>{
+  console.log("Server fetching on a port 2000")
+})
