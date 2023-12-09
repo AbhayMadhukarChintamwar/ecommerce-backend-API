@@ -5,6 +5,7 @@ const productRoutes = express.Router()
 const productController = new ProductController()
 productRoutes.get('/', productController.getAllProducts)
 productRoutes.post('/', productController.addProducts)
+productRoutes.get('/filter',productController.filterProducts)
 productRoutes.get('/:id',productController.getOneProduct);
 
 
