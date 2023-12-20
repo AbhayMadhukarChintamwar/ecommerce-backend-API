@@ -18,7 +18,7 @@ export default class UserController {
 
         } else {
             //1. create token
-            const token = jwt.sign({userID: user.id, email: user.email}, "abhychintmwar123",{
+            const token = jwt.sign({userID: user.id, email: user.email}, "abhychintamwar123",{
                 expiresIn:'1h'
             })
 
