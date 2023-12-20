@@ -8,7 +8,7 @@ export default class UserController {
 
         const user = UserModel.SignUp(name, email, password, type);
         res.status(201).send(user)
-    } 
+    }
     signIn(req, res) {
         const user = UserModel.SignIn(req.body.email, req.body.password);
 
@@ -18,8 +18,8 @@ export default class UserController {
 
         } else {
             //1. create token
-            const token = jwt.sign({userID: user.id, email: user.email}, "abhychintamwar123",{
-                expiresIn:'1h'
+            const token = jwt.sign({ userID: user.id, email: user.email }, "abhychintamwar123", {
+                expiresIn: '1h'
             })
 
             //2. send token

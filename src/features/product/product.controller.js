@@ -24,13 +24,30 @@ export default class ProductController {
     const maxPrice = req.query.maxPrice;
     const category = req.query.category;
 
-    const product = ProductModel.filter(minPrice,maxPrice,category);
-    
-      res.status(200).send(product)
-  
-     
-    
+    const product = ProductModel.filter(minPrice, maxPrice, category);
+
+    res.status(200).send(product)
+
+
+
   };
+
+  rateProduct(req, res) {
+    const userID = req.query.userID;
+    const productID = req.query.productID;
+    const rating = req.query.rating;
+
+    const error = ProductModel.rateProduct(userID, productID, rating);
+
+    if (error) {
+      return res.status(400).send(error);
+    } else {
+      return res.status(200).send("Rating are added")
+    }
+   
+  }
+
+
 }
 
 // example of query parameters

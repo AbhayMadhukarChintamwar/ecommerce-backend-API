@@ -30,6 +30,7 @@ export default class UserModel {
 }
 
 let users = [{
+    id:1,
     "name": "user1",
     "email": "user@gmail.com",
     "password": "pass123",
