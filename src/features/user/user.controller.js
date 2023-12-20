@@ -1,4 +1,5 @@
 import UserModel from "./user.model.js"
+import jwt from 'jsonwebtoken';
 export default class UserController {
 
     signUp(req, res) {
@@ -16,7 +17,14 @@ export default class UserController {
             return res.status(400).send("User not found");
 
         } else {
-            return res.status(201).send(user)
+            //1. create token
+            const token = jwt.sign({userID: user.id, email: user.email}, "abhychintmwar123",{
+                expiresIn:'1h'
+            })
+
+            //2. send token
+
+            return res.status(200).send(token)
 
         }
     }
